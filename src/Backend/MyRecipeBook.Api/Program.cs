@@ -1,6 +1,5 @@
 using MyRecipeBook.Application.UseCases.User.Register;
 using MyRecipeBook.Application.UseCases.User.Register.Validators;
-using MyRecipeBook.Communication.Requests;
 
 var builder = WebApplication.CreateBuilder(args);
 
