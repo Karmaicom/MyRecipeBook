@@ -1,4 +1,5 @@
-using MyRecipeBook.Application.UseCases.User;
+using MyRecipeBook.Application.UseCases.User.Register;
+using MyRecipeBook.Application.UseCases.User.Register.Validators;
 using MyRecipeBook.Communication.Requests;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<RegisterUseCase>();
-builder.Services.AddScoped<RegisterUserValidator>();
+builder.Services.AddScoped<RegisterUserRequestValidator>();
 
 var app = builder.Build();
 

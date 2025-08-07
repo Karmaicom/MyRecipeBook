@@ -1,12 +1,12 @@
 ﻿using FluentValidation;
 using MyRecipeBook.Communication.Requests;
 
-namespace MyRecipeBook.Application.UseCases.User
+namespace MyRecipeBook.Application.UseCases.User.Register.Validators
 {
-    public class RegisterUserValidator : AbstractValidator<UserRegisterRequest>
+    public class RegisterUserRequestValidator : AbstractValidator<UserRegisterRequest>
     {
 
-        public RegisterUserValidator()
+        public RegisterUserRequestValidator()
         {
 
             RuleFor(x => x.Name).NotEmpty();

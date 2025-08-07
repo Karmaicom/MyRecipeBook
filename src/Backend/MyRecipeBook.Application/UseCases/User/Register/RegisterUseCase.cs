@@ -1,13 +1,14 @@
-﻿using MyRecipeBook.Communication.Requests;
+﻿using MyRecipeBook.Application.UseCases.User.Register.Validators;
+using MyRecipeBook.Communication.Requests;
 using MyRecipeBook.Communication.Responses;
 
-namespace MyRecipeBook.Application.UseCases.User
+namespace MyRecipeBook.Application.UseCases.User.Register
 {
     public class RegisterUseCase
     {
-        private readonly RegisterUserValidator _validator;
+        private readonly RegisterUserRequestValidator _validator;
 
-        public RegisterUseCase(RegisterUserValidator validator)
+        public RegisterUseCase(RegisterUserRequestValidator validator)
         {
            _validator  = validator;
         }
