@@ -37,7 +37,7 @@ namespace MyRecipeBook.Application.UseCases.User.Register
             if (!validationResult.IsValid)
             {
                 var errors = validationResult.Errors
-                    .Select(error => error.ErrorMessage).ToList();
+                    .Select(error => $"{error.ErrorCode} - {error.ErrorMessage}").ToList();
 
                 throw new ArgumentException(string.Join(", ", errors));
             }

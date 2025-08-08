@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MyRecipeBook.Communication.Requests;
+using MyRecipeBook.Exceptions;
 
 namespace MyRecipeBook.Application.UseCases.User.Register.Validators
 {
@@ -9,14 +10,14 @@ namespace MyRecipeBook.Application.UseCases.User.Register.Validators
         public RegisterUserRequestValidator()
         {
 
-            RuleFor(x => x.Name).NotEmpty();
+            RuleFor(x => x.Name).NotEmpty().WithMessage(ResourceMessagesException.NAME_EMPTY);
 
-            RuleFor(x => x.Email).NotEmpty();
-            RuleFor(x => x.Email).EmailAddress().WithMessage("Email é inválido!");
+            RuleFor(x => x.Email).NotEmpty().WithMessage(ResourceMessagesException.EMAIL_EMPTY);
+            RuleFor(x => x.Email).EmailAddress().WithMessage(ResourceMessagesException.EMAIL_INVALID);
 
-            RuleFor(x => x.Password).NotEmpty();
+            RuleFor(x => x.Password).NotEmpty().WithMessage(ResourceMessagesException.PASSWORD_EMPTY);
             RuleFor(x => x.Password.Length).GreaterThanOrEqualTo(6)
-                .WithMessage("A senha deve ter pelo menos 6 caracteres.");
+                .WithMessage(ResourceMessagesException.PASSWORD_INVALID);
         }
 
     }
